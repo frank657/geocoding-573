@@ -8,6 +8,7 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import { initMapbox } from "../plugins/init_mapbox"
+import { initAutocomplete } from "../plugins/init_autocomplete"
 
 Rails.start()
 Turbolinks.start()
@@ -27,6 +28,7 @@ import "bootstrap";
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox()
+  initAutocomplete()
   // Call your functions here, e.g:
   // initSelect2();
 });

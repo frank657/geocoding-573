@@ -8,7 +8,9 @@ class FlatsController < ApplicationController
     @markers = @flats.geocoded.map do |flat|
       {
         lat: flat.latitude,
-        lng: flat.longitude
+        lng: flat.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { flat: flat }),
+        image_url: helpers.asset_url('https://img.icons8.com/cotton/2x/home--v2.png')
       }
     end
   end
